@@ -1,299 +1,207 @@
 * {
-  padding: 0;
   margin: 0;
-  font-family: "Yu Gothic Merdium", "Yu Gothic", "ヒラギノ角ゴ Pro W3",
-    "メイリオ", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif JP", serif;
   color: #333;
 }
-h1 {
-  font-family: "Yu Micho", "ヒラギノ明朝 ProN W3", "HG明朝E", "MS P明朝",
-    "MS 明朝", Helvetica, sans-serif;
+
+body {
+  background-color: #fff;
+  line-height: 1.6;
 }
+
 header {
-  width: 100%;
-  background-color: #212235;
   display: flex;
-  justify-content: left;
-}
-.header-left {
-  margin-left: 30px;
-  padding: 11px 0;
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
 }
-.header-right {
-  margin-left: auto;
-  margin-right: 50px;
-  display: flex;
-  align-items: center;
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.header-right a {
-  color: white;
+
+.nav a {
   text-decoration: none;
-  margin-left: 30px;
-  font-size: 20px;
+  color: #222;
+  margin-left: 25px;
+  font-size: 0.9rem;
+  position: relative; 
 }
 
-/* ハンバーガーメニュー画面表示させない */
-.menu-icon {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.3s;
 }
 
-.menu-toggle {
-  display: none;
-}
-/*kokomade*/
-@media screen and (max-width: 830px) {
-  /*　画面サイズが830px以下の時はここを読み込む　*/
-  .header-left {
-    margin-left: 15px;
-  }
-  .header-right {
-    display: none; /* 初期状態では非表示 */
-    flex-direction: column;
-    background-color: #4fc3f7;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  /* ハンバーガーアイコンを表示 */
-  .menu-icon {
-    display: block;
-  }
-
-  /* チェックが入ったらメニューを表示 */
-  .menu-toggle:checked + .menu-icon + .header-right {
-    display: flex;
-  }
-
-  .header-right a {
-    padding: 10px;
-    display: block;
-  }
-}
-
-.icon {
-  height: 38px;
-}
-.header-left span {
-  margin-left: 18px;
-  color: white;
-  font-size: 26px;
-  font-family: serif;
-}
-.main-visual {
-  height: 400px;
+.nav a:hover::after {
   width: 100%;
+}
+
+/* ===== Hero Image ===== */
+.main-visual img {
+  width: 100%;
+  height: 50vh;
   background: url("../img/island.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.main-visual img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
+/* ===== Section Common ===== */
+.section {
+  padding: 100px 10%;
 }
 
-.description {
+.section-title {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
   text-align: center;
+  position: relative;
 }
-.description h1 {
-  font-size: 23px;
-  padding: 50px;
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #000;
+  margin: 15px auto 0;
 }
-.description p {
-  margin-bottom: 70px;
-}
-@media screen and (max-width: 830px) {
-  .description p {
-    padding: 0 5px;
-  }
-}
-.profile-wrap {
+
+/* ===== Profile ===== */
+.profile-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  width: 100%;
-  background-color: #f5f5f5;
-}
-@media screen and (max-width: 830px) {
-  .profile-wrap {
-    flex-direction: column;
-  }
-}
-.profile-left,
-.profile-right {
-  width: 30%;
-}
-@media screen and (max-width: 830px) {
-  .profile-left,
-  .profile-right {
-    width: 100%;
-  }
-}
-.profile-left {
-  display: flex;
   justify-content: center;
-  padding: 30px 0;
+  gap: 50px;
 }
+
 .profile-img {
-  height: 300px;
-  margin: 0 auto;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
-.profile-right {
-  padding-left: 50px;
+
+.profile-right h3 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
 }
-@media screen and (max-width: 830px) {
-  .profile-right {
-    padding-left: 0;
-    text-align: center;
-  }
-}
-.profile-right h1 {
-  font-size: 30px;
-  margin-bottom: 30px;
-}
+
 .profile-details {
   display: flex;
-  font-size: 22px;
+  gap: 40px;
 }
-@media screen and (max-width: 830px) {
-  .profile-details {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 45px;
-  }
+
+.details-left {
+  font-weight: bold;
 }
-.details-left,
-.details-right {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  line-height: 40px;
-}
-.details-left p {
-  font-weight: bolder;
-}
-.details-right {
-  padding-left: 30px;
-}
-.recs-wrap {
-  width: 100%;
+
+/* ===== Map Section ===== */
+.map-section p {
   text-align: center;
+  margin-bottom: 30px;
 }
-.section-title {
-  font-size: 25px;
+
+.map-wrap {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
 }
-.recs-wrap h1 {
-  padding-top: 70px;
-  padding-bottom: 30px;
-}
+
+/* ===== Cebu Recommendations ===== */
 .recs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  width: 80%;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
-@media screen and (max-width: 830px) {
-  .recs {
-    flex-direction: column;
-    width: 90%;
-  }
-}
+
 .rec {
-  width: 31%;
-  height: 480px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.rec:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.rec-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: 0.4s;
+}
+
+.rec:hover .rec-img {
+  filter: grayscale(0%);
+}
+
+.rec-bottom {
+  padding: 20px;
   text-align: left;
 }
-@media screen and (max-width: 830px) {
-  .rec {
-    width: 100%;
-    height: auto;
-    margin-bottom: 41px;
-  }
-}
-.rec img {
-  width: 100%;
-}
-.rec-title {
-  margin: 10px 0;
-  font-size: 19px;
-}
-.rec-bottom {
-  height: 274px;
-}
-@media screen and (max-width: 830px) {
-  .rec-bottom {
-    height: auto;
-  }
-}
-.rec-description {
-  height: 140px;
-}
-@media screen and (max-width: 830px) {
-  .rec-description {
-    height: auto;
-  }
-}
-.btn-wrap {
-  text-align: right;
-}
-button {
-  font-size: 18px;
-  background-color: #212235;
-  color: white;
-  border-radius: 5px;
-  font-family: serif;
-}
-button:hover {
-  opacity: 0.8;
-}
-.rec-bottom button {
-  padding: 8px 14px;
-}
-@media screen and (max-width: 830px) {
-  .rec-bottom button {
-    margin-top: 18px;
-  }
-}
+
+/* ===== Contact ===== */
 .contact {
   text-align: center;
 }
-.contact h1 {
-  padding: 120px 0 50px;
-}
-@media screen and (max-width: 830px) {
-  .contact h1 {
-    padding: 60px 0 50px;
-  }
-}
-.contact p {
-  margin-bottom: 30px;
-  padding: 0 5px;
-}
+
 .btn-contact {
-  padding: 21px 63px;
-  margin-bottom: 90px;
+  background: none;
+  border: 1px solid #000;
+  padding: 12px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-footer {
-  background-color: #1a1a1a;
-  text-align: center;
+.btn-contact:hover {
+  background: #000;
+  color: #fff;
 }
-footer p {
+
+/* ===== Footer ===== */
+footer {
+  background-color: #111;
+  text-align: center;
   padding: 20px 0;
+}
+
+footer p {
   color: #f5f5f5;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .profile-details {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 60px 8%;
+  }
 }
