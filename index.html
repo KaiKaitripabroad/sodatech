@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,118 +8,115 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>My Website</title>
+    <title>Introduce | Cebu Life</title>
   </head>
   <body>
     <header>
-      <div class="header-left">
-        <span>My Website</span>
-      </div>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-      <nav class="header-right">
-        <a href="#about">About</a>
-        <a href="#spots">Spots</a>
+      <h1 class="logo">Introduce</h1>
+      <nav class="nav">
+        <a href="#profile">Profile</a>
+        <a href="#from-japan">From Japan</a>
+        <a href="#spots">Cebu Life</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
+
     <div class="main-visual">
-      <img src="img/island.jpg" alt="" />
+      <img src="img/island.jpg" alt="Cebu Island" />
     </div>
-    <div class="description">
-      <h1>私の好きなセブ島を紹介</h1>
-      <p>このサイトでは、私の好きなセブ島の観光スポットについて紹介します。</p>
-    </div>
-    <section class="profile-wrap">
-      <div class="profile-left">
-        <img
-          class="profile-img"
-          src="img/profile-image.png"
-          alt="Profile-image"
-        />
-      </div>
-      <div class="profile-right">
-        <h1>Aya Sasaki</h1>
-        <div class="profile-details">
-          <div class="details-left">
-            <p>Age</p>
-            <p>Job</p>
-            <p>Hobby</p>
-            <p>My Dream</p>
-          </div>
-          <div class="details-right">
-            <p>22</p>
-            <p>大学4年生</p>
-            <p>旅、ヨガ、写真</p>
-            <p>世界一周旅行</p>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile-wrap section">
+      <h2 class="section-title">Profile</h2>
+      <div class="profile-container">
+        <div class="profile-left">
+          <img
+            class="profile-img"
+            src="img/profile-image.png"
+            alt="Profile-image"
+          />
+        </div>
+        <div class="profile-right">
+          <h3>Aya Sasaki</h3>
+          <div class="profile-details">
+            <div class="details-left">
+              <p>Age</p>
+              <p>Job</p>
+              <p>Hobby</p>
+              <p>My Dream</p>
+            </div>
+            <div class="details-right">
+              <p>22</p>
+              <p>大学4年生</p>
+              <p>旅、ヨガ、写真</p>
+              <p>世界一周旅行</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="recs-wrap">
-      <h1 class="section-title">セブ島のオススメポイント</h1>
+
+    <!-- From Japan Section -->
+    <section id="from-japan" class="map-section section">
+      <h2 class="section-title">From Japan</h2>
+      <p>
+        私の出身地は北海道です。自然豊かで、四季を通して美しい風景が楽しめます。
+      </p>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d512401.35151139496!2d140.24331835756318!3d43.06396848803188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0cba9b5b59b57f%3A0x8e0b0ecb93b2b497!2z5YyX5rW36YGT5pyt5bmM5paw5a6k!5e0!3m2!1sja!2sjp!4v1730950000000!5m2!1sja!2sjp"
+          width="100%"
+          height="350"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Cebu Life Section -->
+    <section id="spots" class="recs-wrap section">
+      <h2 class="section-title">Cebu Life</h2>
       <div class="recs">
         <div class="rec">
           <img src="img/shopping.jpg" alt="" class="rec-img" />
           <div class="rec-bottom">
-            <h2 class="rec-title">アヤラショッピングモール</h2>
+            <h3 class="rec-title">アヤラショッピングモール</h3>
             <p class="rec-description">
-              セブには大きなショッピングモールがたくさんあります。私のお気に入りのショッピングモールをご紹介します。
+              セブには大きなショッピングモールがたくさんあります。お気に入りのスポットをご紹介します。
             </p>
-            <div class="btn-wrap">
-              <button>See More</button>
-            </div>
           </div>
         </div>
         <div class="rec">
           <img src="img/oslob.png" alt="" class="rec-img" />
           <div class="rec-bottom">
-            <h2 class="rec-title">オスロブダイビング</h2>
+            <h3 class="rec-title">オスロブダイビング</h3>
             <p class="rec-description">
-              ジンベイザメを間近で見れるダイビングツアーの魅力をご紹介します。
+              透き通った海でジンベイザメを間近に見られる体験は一生の思い出です。
             </p>
-            <div class="btn-wrap">
-              <button>See More</button>
-            </div>
           </div>
         </div>
         <div class="rec">
           <img src="img/night_market.png" alt="" class="rec-img" />
           <div class="rec-bottom">
-            <h2 class="rec-title">ナイトマーケット</h2>
+            <h3 class="rec-title">ナイトマーケット</h3>
             <p class="rec-description">
-              ITパーク近くのスグボメルカードでは、いろいろなローカルフードが楽しめます。
+              ITパーク近くのスグボメルカードではローカルフードが勢揃い。夜の熱気を感じよう！
             </p>
-            <div class="btn-wrap">
-              <button>See More</button>
-            </div>
           </div>
         </div>
-        <!-- <div class="rec">
-                <img src="img/oslob.png" alt="" class="rec-img">
-                <h2 class="rec-title">オスロブダイビング</h2>
-                <p class="rec-description">透き通った海で迫力のジンベイザメに間近に会えるダイビングツアーがめちゃめちゃ楽しかった！</p>
-                <div class="rec-bottom">
-                    <button>See More</button>
-                </div>
-            </div>
-            <div class="rec">
-                <img src="img/night_market.png" alt="" class="rec-img">
-                <h2 class="rec-title">ナイトマーケットのエビウマい</h2>
-                <p class="rec-description">セブといえばにわとり！<br>ITパーク近くのスグボメルカードの熱気が最高でした！</p>
-                <div class="rec-bottom">
-                    <button>See More</button>
-                </div>
-            </div> -->
       </div>
     </section>
-    <section class="contact">
-      <h1 class="section-title">お問い合わせ</h1>
-      <p>ご質問・ご連絡は、以下のリンクからよろしくお願いいたします。</p>
-      <button class="btn-contact">Contact</button>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <h2 class="section-title">Contact</h2>
+      <p>ご質問やご連絡は下記からお願いいたします。</p>
+      <button class="btn-contact">Send Message</button>
     </section>
+
     <footer>
-      <p>(c) cebu tourist</p>
+      <p>&copy; 2025 Cebu Life by Aya Sasaki</p>
     </footer>
   </body>
 </html>
