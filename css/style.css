@@ -34,7 +34,7 @@ header {
   color: #222;
   margin-left: 25px;
   font-size: 0.9rem;
-  position: relative; 
+  position: relative;
 }
 
 .nav a::after {
@@ -50,6 +50,43 @@ header {
 
 .nav a:hover::after {
   width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 830px) {
+  .menu-icon {
+    display: block;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #ffffffc5;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav a {
+    display: block;
+    margin: 15px 0;
+    font-size: 1rem;
+  }
+
+  /* チェックが入ったらメニューを表示 */
+  .menu-toggle:checked + .menu-icon + .nav {
+    display: flex;
+  }
 }
 
 /* ===== Hero Image ===== */
