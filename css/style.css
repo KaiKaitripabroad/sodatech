@@ -169,10 +169,24 @@ header {
 }
 
 .map-wrap {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  overflow: hidden;
-}
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+  }
+
+  .map-wrap iframe {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .map-wrap iframe {
+      aspect-ratio: auto;
+      height: 300px;
+    }
+  }
 
 /* ===== Cebu Recommendations ===== */
 .recs {
