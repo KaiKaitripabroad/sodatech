@@ -3,10 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Noto Serif JP", serif;
-  color: #333;
 }
 
 body {
+  color: #333;
   background-color: #ffffff;
   line-height: 1.6;
 }
@@ -21,6 +21,57 @@ header {
   top: 0;
   background: #fff;
   z-index: 100;
+}
+
+/* ===== ダークモード切替ボタン ===== */
+.mode-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.mode-btn:hover {
+  transform: scale(1.2);
+}
+
+/* ===== ダークモード全体設定 ===== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode a {
+  color: #f5f5f5;
+}
+body.dark-mode p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .rec-bottom > h3 {
+  color: #121212;
+}
+
+body.dark-mode .rec-bottom > p {
+  color: #333333;
+}
+
+body.dark-mode footer {
+  background-color: #f5f5f5;
+}
+
+body.dark-mode footer p {
+  color: #121212;
+}
+
+body.dark-mode .section-title::after {
+  background: #f5f5f5;
 }
 
 .logo {
@@ -53,7 +104,8 @@ header {
 }
 
 .menu-toggle {
-  display: none;
+  position: absolute;
+  left: -9999px;
 }
 
 .menu-icon {
@@ -82,6 +134,9 @@ header {
     margin: 15px 0;
     font-size: 1rem;
   }
+  body.dark-mode .nav a {
+    color: #121212;
+  }
 
   /* チェックが入ったらメニューを表示 */
   .menu-toggle:checked + .menu-icon + .nav {
@@ -90,13 +145,15 @@ header {
 }
 
 /* ===== Hero Image ===== */
-.main-visual img {
-  width: 100%;
-  height: 50vh;
-  background: url("img/island.jpg") ;
+.main-visual {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.main-visual img {
+  width: 100%;
+  height: 50vh;
 }
 
 /* ===== Section Common ===== */
@@ -135,7 +192,12 @@ header {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
+  transition: 0.3s;
+  cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 .profile-right h3 {
@@ -161,7 +223,6 @@ header {
   text-align: center;
 }
 
-
 /* ===== Map Section ===== */
 .map-section p {
   text-align: center;
@@ -169,24 +230,24 @@ header {
 }
 
 .map-wrap {
-    width: 100%;
-    max-width: 600px; 
-    margin: 0 auto; 
-  }
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+.map-wrap iframe {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
   .map-wrap iframe {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border: 0;
-    border-radius: 10px;
+    aspect-ratio: auto;
+    height: 300px;
   }
-
-  @media (max-width: 768px) {
-    .map-wrap iframe {
-      aspect-ratio: auto;
-      height: 300px;
-    }
-  }
+}
 
 /* ===== Cebu Recommendations ===== */
 .recs {
