@@ -7,80 +7,46 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Introduce</title>
   </head>
   <body>
-    <header>
-      <h1 class="logo">Introduce</h1>
-
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
-      <nav class="nav">
-        <a href="#profile">Profile</a>
-        <a href="#from">From</a>
-        <a href="#spots">Cebu Life</a>
-        <a href="#contact">Contact</a>
-        <button id="mode-toggle" class="mode-btn">🌙</button>
-      </nav>
-    </header>
     <main>
-      <div class="main-visual">
-        <div
-          id="carouselExampleAutoplaying"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/beach.jpg" class="d-block w-100" alt="beach" />
-            </div>
-            <div class="carousel-item">
-              <img src="img/chickens.png" class="d-block w-100" alt="bird" />
-            </div>
-            <div class="carousel-item">
-              <img src="img/shopping.jpg" class="d-block w-100" alt="shop" />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
+      <header>
+        <h1 class="logo">Introduce</h1>
 
+        <div class="menu-icon" id="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="nav" id="nav">
+          <a href="#profile">Profile</a>
+          <a href="#from">From</a>
+          <a href="#spots">Cebu Life</a>
+          <a href="#contact">Contact</a>
+          <button id="mode-toggle" class="mode-btn">🌙</button>
+        </nav>
+      </header>
+      <div class="carousel">
+        <div class="slides">
+          <img src="./img/beach.jpg" alt="beach" class="active" />
+          <img src="./img/chickens.png" alt="bird" />
+          <img src="./img/shopping.jpg" alt="shop" />
+        </div>
+        <!-- ボタン -->
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+      </div>
       <!-- Profile Section -->
       <section id="profile" class="profile-wrap section">
-        <h2 class="section-title">Profile</h2><!-- 画像をhoverで写真の変更をする -->
+        <h2 class="section-title">Profile</h2>
+        <!-- 画像をhoverで写真の変更をする -->
         <div class="profile-container">
           <div class="profile-left">
             <img
+              id="profile-img"
               class="profile-img"
               src="img/profile-image.png"
               alt="Ayaのプロフィール写真"
@@ -182,8 +148,9 @@
       <!-- Contact Section -->
       <section id="contact" class="contact section">
         <h2 class="section-title">Contact</h2>
-        <p>ご質問やご連絡は下記からお願いいたします。</p>
-        <button class="btn-contact">Send Message</button>　<!-- ダークモード時の修正をする -->
+        <p class="btn-con">ご質問やご連絡は下記からお願いいたします。</p>
+        <button class="btn-contact">Send Message</button
+        >　<!-- ダークモード時の修正をする -->
       </section>
     </main>
 

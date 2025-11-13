@@ -15,7 +15,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 20px 20px;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
@@ -80,18 +80,27 @@ body.dark-mode .section-title::after {
   text-transform: uppercase;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav a,
+.mode-btn {
+  margin-left: 30px;
+}
+
 .nav a {
   text-decoration: none;
   color: #222;
-  margin-left: 25px;
-  font-size: 0.9rem;
   position: relative;
+  font-size: 1.1rem;
 }
 
 .nav a::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -5px;
   left: 0;
   width: 0;
   height: 1px;
@@ -103,62 +112,155 @@ body.dark-mode .section-title::after {
   width: 100%;
 }
 
-.menu-toggle {
-  position: absolute;
-  left: -9999px;
-}
-
 .menu-icon {
   display: none;
-  font-size: 1.8rem;
+  width: 30px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
 }
 
+.menu-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ====== スマホサイズ時 ====== */
 @media screen and (max-width: 830px) {
   .menu-icon {
-    display: block;
+    display: flex;
   }
+
   .nav {
-    display: none;
     position: absolute;
     top: 70px;
     right: 0;
     width: 100%;
-    background: #ffffffc5;
+    background: #ffffffd8;
     flex-direction: column;
     text-align: center;
+    padding: 25px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .nav.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .nav a {
     display: block;
-    margin: 15px 0;
+    margin: 15px;
     font-size: 1rem;
   }
+
+  /* ダークモード中のナビ文字 */
   body.dark-mode .nav a {
     color: #121212;
   }
 
-  /* チェックが入ったらメニューを表示 */
-  .menu-toggle:checked + .menu-icon + .nav {
-    display: flex;
+  /* ====== ＝ → × のアニメーション ====== */
+  .menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(16px);
+  }
+
+  .menu-icon.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-16px);
   }
 }
 
-/* ===== Hero Image ===== */
-.main-visual {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* ふわっと表示用 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.main-visual img {
+.carousel {
+  position: relative;
   width: 100%;
-  height: 50vh;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease; /* スライドの滑らかさ */
+}
+
+.slides img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  display: none; /* 最初は非表示 */
+}
+
+.slides img.active {
+  display: block; /* 現在のスライドだけ表示 */
+  animation: fade 0.6s ease;
+}
+
+/* フェードアニメーション */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ナビボタン */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+  left: 15px;
+}
+.next {
+  right: 15px;
 }
 
 /* ===== Section Common ===== */
 .section {
-  padding: 100px 10%;
+  padding: 30px;
 }
 
 .section-title {
@@ -242,7 +344,14 @@ body.dark-mode .section-title::after {
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .carousel {
+    height: 70vh; /* 画面の高さの70%を自動で取る */
+  }
+
+  .slides img {
+    object-fit: contain;
+  }
   .map-wrap iframe {
     aspect-ratio: auto;
     height: 300px;
@@ -271,18 +380,24 @@ body.dark-mode .section-title::after {
 
 .rec-img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
 
 .rec-bottom {
-  padding: 20px;
+  padding: 30px;
   text-align: left;
 }
 
 /* ===== Contact ===== */
 .contact {
   text-align: center;
+  margin-bottom: 60px;
+}
+
+.btn-con{
+  margin-bottom: 50px;
+  font-size: 1.1rem;
 }
 
 .btn-contact {
