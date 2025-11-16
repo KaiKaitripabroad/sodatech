@@ -336,10 +336,6 @@ body.dark-mode .btn-contact:hover {
   display: flex;
   gap: 40px;
 }
-
-.details-left {
-  font-weight: bold;
-}
 /* ===== Profile Table ===== */
 .profile-table {
   border-collapse: collapse;

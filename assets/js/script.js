@@ -4,8 +4,8 @@ const slides = document.querySelectorAll(".slides img");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const profileImg = document.getElementById("profile-img");
-const originalSrc = "/img/profile-image.png";
-const hoverSrc = "/img/chickens.png";
+const originalSrc = "/assets/img/profile-image.png"; // 元の画像パス
+const hoverSrc = "/assets/img/chickens.png"; // ホバー時の画像パス
 const menuIcon = document.getElementById("menu-icon");
 const nav = document.getElementById("nav");
 
