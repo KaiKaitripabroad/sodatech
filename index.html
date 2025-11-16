@@ -7,28 +7,30 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Introduce</title>
   </head>
+
   <body>
+    <!-- ヘッダーを実装 -->
+    <header>
+      <a href="#" class="logo">Introduce</a>
+
+      <div class="menu-icon" id="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="#profile">Profile</a>
+        <a href="#from">From</a>
+        <a href="#spots">Cebu Life</a>
+        <a href="#contact">Contact</a>
+        <button id="mode-toggle" class="mode-btn">🌙</button>
+      </nav>
+    </header>
     <main>
-      <header>
-        <a href="#" class="logo">Introduce</a>
-
-        <div class="menu-icon" id="menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <nav class="nav" id="nav">
-          <a href="#profile">Profile</a>
-          <a href="#from">From</a>
-          <a href="#spots">Cebu Life</a>
-          <a href="#contact">Contact</a>
-          <button id="mode-toggle" class="mode-btn">🌙</button>
-        </nav>
-      </header>
       <div class="carousel">
         <div class="slides">
           <img src="./img/beach.jpg" alt="beach" class="active" />
@@ -56,18 +58,24 @@
           <div class="profile-right">
             <h3>Aya Sasaki</h3>
             <div class="profile-details">
-              <div class="details-left">
-                <p>Age</p>
-                <p>Job</p>
-                <p>Hobby</p>
-                <p>My Dream</p>
-              </div>
-              <div class="details-right">
-                <p>22</p>
-                <p>大学4年生</p>
-                <p>旅、ヨガ、写真</p>
-                <p>世界一周旅行</p>
-              </div>
+              <table class="profile-table">
+                <tr>
+                  <th>Age</th>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <th>Job</th>
+                  <td>大学4年生</td>
+                </tr>
+                <tr>
+                  <th>Hobby</th>
+                  <td>旅、ヨガ、写真</td>
+                </tr>
+                <tr>
+                  <th>My Dream</th>
+                  <td>世界一周旅行</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
@@ -104,7 +112,9 @@
       <section id="spots" class="recs-wrap section">
         <h2 class="section-title">Cebu Life</h2>
         <div class="recs">
+          <!-- cards -->
           <div class="rec">
+            <!-- card -->
             <img
               src="img/shopping.jpg"
               alt="アヤラショッピングモールの外観"
@@ -150,14 +160,36 @@
       <section id="contact" class="contact section">
         <h2 class="section-title">Contact</h2>
         <p class="btn-con">ご質問やご連絡は下記からお願いいたします。</p>
+        <form action="">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            class="input-field"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            class="input-field"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </form>
         <button class="btn-contact">Send Message</button
         >　<!-- ダークモード時の修正をする -->
       </section>
     </main>
 
+    <!-- フッター -->
     <footer>
       <p>&copy; Introduce</p>
     </footer>
-    <script src="js/script.js"></script>
+
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

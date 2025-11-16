@@ -340,7 +340,50 @@ body.dark-mode .btn-contact:hover {
 .details-left {
   font-weight: bold;
 }
+/* ===== Profile Table ===== */
+.profile-table {
+  border-collapse: collapse;
+  font-size: 1rem;
+}
 
+.profile-table th,
+.profile-table td {
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.profile-table th {
+  font-weight: bold;
+  color: #333;
+  width: 120px; /* 左列を固定幅にして揃える */
+}
+
+.profile-table tr + tr th,
+.profile-table tr + tr td {
+  border-top: 1px solid #ddd; /* 行の区切り線 */
+}
+
+/* ===== Intro Text ===== */
+.intro-text {
+  margin: 50px auto 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+}
+
+/* スマホ */
+@media screen and (max-width: 768px) {
+  .profile-right h3 {
+    text-align: center;
+  }
+
+  .profile-table {
+    margin: 0 auto; /* スマホ時に中央寄せ */
+  }
+}
+/* ue変更 よく見る!!
+*/
 .intro-text {
   margin: 50px auto 0;
   font-size: 1rem;
