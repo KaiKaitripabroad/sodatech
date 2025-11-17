@@ -5,7 +5,7 @@
   font-family: "Noto Serif JP", serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -285,6 +285,7 @@ body.dark-mode .btn-contact:hover {
 
 /* ===== Section Common ===== */
 .section {
+  scroll-margin-top: 30px;
   padding: 50px;
 }
 
@@ -477,6 +478,27 @@ body.dark-mode .btn-contact:hover {
 .btn-contact:hover {
   background: #000;
   color: #fff;
+}
+
+.message-frame {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field {
+  padding: 15px 18px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fff;
+  transition: 0.25s ease;
+}
+.input-field:focus {
+  border-color: #000;
+  outline: none;
 }
 
 /* ===== Footer ===== */
