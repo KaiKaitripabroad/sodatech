@@ -265,14 +265,13 @@ body.dark-mode .profile-table th {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
+  background: #00000066;
   color: #fff;
   border: none;
-  font-size: 2rem;
+  font-size: 30px;
   cursor: pointer;
-  padding: 8px 15px;
+  padding: 8px 20px;
   border-radius: 50%;
-  transition: background 0.3s;
 }
 
 .prev:hover,
@@ -387,8 +386,7 @@ body.dark-mode .profile-table th {
     height: 100%;
   }
 }
-/* ue変更 よく見る!!
-*/
+
 .intro-text {
   margin: 50px auto 0;
   font-size: 1rem;
