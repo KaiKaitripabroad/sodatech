@@ -382,6 +382,10 @@ body.dark-mode .profile-table th {
   .profile-table {
     margin: 0 auto; /* スマホ時に中央寄せ */
   }
+
+  .slides img {
+    height: 100%;
+  }
 }
 /* ue変更 よく見る!!
 */
