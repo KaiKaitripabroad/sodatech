@@ -1,214 +1,216 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Noto Serif JP", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif JP", serif;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  color: #333;
-  background-color: #ffffff;
-  line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    line-height: 1.6;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 100;
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #222;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #222;
 }
 
 .nav {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .nav a,
 .mode-btn {
-  margin-left: 30px;
+    margin-left: 30px;
 }
 
 .nav a {
-  text-decoration: none;
-  color: #222;
-  position: relative;
-  font-size: 1.1rem;
+    text-decoration: none;
+    color: #222;
+    position: relative;
+    font-size: 1.1rem;
 }
 
 .nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: #000;
-  transition: width 0.3s;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #000;
+    transition: width 0.3s;
 }
 
 .nav a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 .menu-icon {
-  display: none;
-  width: 30px;
-  height: 25px;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
+    display: none;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .menu-icon span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 /* ===== ダークモード切替ボタン ===== */
 .mode-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: transform 0.3s ease;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
 }
 
 .mode-btn:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 /* ===== ダークモード全体設定 ===== */
-
-body.dark-mode .menu-icon span {
-  background-color: #f5f5f5;
-}
-
 body.dark-mode {
-  background-color: #121212;
-  color: #f5f5f5;
-}
+    background-color: #121212;
+    color: #f5f5f5;
 
-body.dark-mode header {
-  background-color: #1e1e1e;
-}
+    .menu-icon span {
+        background-color: #f5f5f5;
+    }
 
-body.dark-mode a {
-  color: #f5f5f5;
-}
-body.dark-mode p {
-  color: #e0e0e0;
-}
+    header {
+        background-color: #1e1e1e;
+    }
 
-body.dark-mode .card-bottom > h3 {
-  color: #121212;
-}
+    a {
+        color: #f5f5f5;
+    }
 
-body.dark-mode .card-bottom > p {
-  color: #333333;
-}
+    p {
+        color: #e0e0e0;
+    }
 
-body.dark-mode footer {
-  background-color: #f5f5f5;
-}
+    .card-bottom {
+        > h3 {
+            color: #121212;
+        }
 
-body.dark-mode footer p {
-  color: #121212;
-}
+        > p {
+            color: #333333;
+        }
+    }
 
-body.dark-mode .section-title::after {
-  background: #f5f5f5;
-}
+    footer {
+        background-color: #f5f5f5;
 
-body.dark-mode .btn-contact {
-  border: 1px solid #f5f5f5;
-  color: #f5f5f5;
-}
+        p {
+            color: #121212;
+        }
+    }
 
-body.dark-mode .btn-contact:hover {
-  background: #fff;
-  color: #000;
-}
+    .section-title::after {
+        background: #f5f5f5;
+    }
 
-body.dark-mode .profile-table th {
-  color: #f5f5f5;
+    .btn-contact {
+        border: 1px solid #f5f5f5;
+        color: #f5f5f5;
+
+        &:hover {
+            background: #fff;
+            color: #000;
+        }
+    }
+
+    .profile-table th {
+        color: #f5f5f5;
+    }
 }
 
 /* ====== スマホサイズ時 ====== */
 @media screen and (max-width: 830px) {
-  .menu-icon {
-    display: flex;
-  }
+    .menu-icon {
+        display: flex;
+    }
 
-  .nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: #ffffffd8;
-    flex-direction: column;
-    text-align: center;
-    padding: 25px;
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #ffffffd8;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
 
-  .nav.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+    .nav.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 
-  .nav a {
-    display: block;
-    margin: 15px;
-    font-size: 1rem;
-  }
+    .nav a {
+        display: block;
+        margin: 15px;
+        font-size: 1rem;
+    }
 
-  /* ダークモード中のナビ文字 */
-  body.dark-mode .nav a {
-    color: #121212;
-  }
+    /* ダークモード中のナビ文字 */
+    body.dark-mode .nav a {
+        color: #121212;
+    }
 
-  /* ====== ＝ → × のアニメーション ====== */
-  .menu-icon.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(16px);
-  }
+    /* ====== ＝ → × のアニメーション ====== */
+    .menu-icon.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(16px);
+    }
 
-  .menu-icon.active span:nth-child(2) {
-    opacity: 0;
-  }
+    .menu-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
 
-  .menu-icon.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-16px);
-  }
+    .menu-icon.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-16px);
+    }
 
-  .mode-btn {
-    margin-left: 0;
-  }
+    .mode-btn {
+        margin-left: 0;
+    }
 }
 /* ふわっと表示用
 @keyframes とは？
@@ -219,137 +221,137 @@ CSSアニメーションの動きを定義するための設計図。
 「最初（from）どうする → 最後（to）どうする」
 という形で作る。 */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .carousel {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  margin: auto;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
 }
 
 .slides {
-  display: flex;
-  transition: transform 0.6s ease; /* スライドの滑らかさ */
+    display: flex;
+    transition: transform 0.6s ease; /* スライドの滑らかさ */
 }
 
 .slides img {
-  object-fit: cover;
-  width: 100%;
-  height: 500px;
-  flex-shrink: 0;
-  display: none; /* 最初は非表示 */
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    flex-shrink: 0;
+    display: none; /* 最初は非表示 */
 }
 
 .slides img.active {
-  display: block; /* 現在のスライドだけ表示 */
-  animation: fade 0.6s ease;
+    display: block; /* 現在のスライドだけ表示 */
+    animation: fade 0.6s ease;
 }
 
 /* フェードアニメーション */
 @keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* ナビボタン */
 .prev,
 .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #00000066;
-  color: #fff;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 8px 20px;
-  border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #00000066;
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 50%;
 }
 
 .prev:hover,
 .next:hover {
-  background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .prev {
-  left: 15px;
+    left: 15px;
 }
 .next {
-  right: 15px;
+    right: 15px;
 }
 
 /* ===== Section Common ===== */
 .section {
-  scroll-margin-top: 30px;
-  padding: 50px;
+    scroll-margin-top: 30px;
+    padding: 50px;
 }
 
 .section-title {
-  font-size: 1.6rem;
-  letter-spacing: 1px;
-  margin-bottom: 50px;
-  text-align: center;
-  position: relative;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
 }
 
 .section-title::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: #000;
-  margin: 15px auto 0;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #000;
+    margin: 15px auto 0;
 }
 
 /* ===== Profile ===== */
 .profile-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
 }
 
 .profile-img {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: 0.3s;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 .profile-img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .profile-right h3 {
-  font-size: 1.4rem;
-  margin-bottom: 25px;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
 }
 
 .profile-details {
-  display: flex;
-  gap: 40px;
+    display: flex;
+    gap: 40px;
 }
 /* ===== Profile Table ===== */
 .profile-table {
-  border-collapse: collapse;
-  font-size: 1rem;
+    border-collapse: collapse;
+    font-size: 1rem;
 }
 /* 表（table）のセルの外枠（ボーダー）を「くっつける」設定。
 
@@ -359,185 +361,185 @@ collapse を指定すると、1本の線として表示されるのでスッキ�
 
 .profile-table th,
 .profile-table td {
-  padding: 8px 10px;
-  text-align: left;
+    padding: 8px 10px;
+    text-align: left;
 }
 
 .profile-table th {
-  font-weight: bold;
-  color: #333;
-  width: 120px; /* 左列を固定幅にして揃える */
+    font-weight: bold;
+    color: #333;
+    width: 120px; /* 左列を固定幅にして揃える */
 }
 
 .profile-table tr + tr th,
 .profile-table tr + tr td {
-  border-top: 1px solid #ddd; /* 行の区切り線 */
+    border-top: 1px solid #ddd; /* 行の区切り線 */
 }
 
 /* ===== Intro Text ===== */
 .intro-text {
-  margin: 50px auto 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #444;
-  text-align: center;
+    margin: 50px auto 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: center;
 }
 
 /* スマホ */
 @media screen and (max-width: 768px) {
-  .profile-right h3 {
-    text-align: center;
-  }
+    .profile-right h3 {
+        text-align: center;
+    }
 
-  .profile-table {
-    margin: 0 auto; /* スマホ時に中央寄せ */
-  }
+    .profile-table {
+        margin: 0 auto; /* スマホ時に中央寄せ */
+    }
 
-  .slides img {
-    height: 100%;
-  }
+    .slides img {
+        height: 100%;
+    }
 }
 
 .intro-text {
-  margin: 50px auto 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #444;
-  text-align: center;
+    margin: 50px auto 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: center;
 }
 
 /* ===== Map Section ===== */
 .map-section p {
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .map-wrap {
-  width: 100%;
-  margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .map-wrap iframe {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border: 0;
-  border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 0;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
-  .carousel {
-    height: auto;
-  }
+    .carousel {
+        height: auto;
+    }
 
-  .slides img {
-    object-fit: contain;
-  }
-  .map-wrap iframe {
-    aspect-ratio: auto;
-    height: 300px;
-  }
-  .profile-right h3 {
-    text-align: center;
-  }
+    .slides img {
+        object-fit: contain;
+    }
+    .map-wrap iframe {
+        aspect-ratio: auto;
+        height: 300px;
+    }
+    .profile-right h3 {
+        text-align: center;
+    }
 }
 
 /* ===== Cebu Recommendations ===== */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .card {
-  border: 1px solid #eee;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  transition: 0.3s;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-bottom {
-  padding: 30px;
-  text-align: left;
+    padding: 30px;
+    text-align: left;
 }
 
 /* ===== Contact ===== */
 .contact {
-  text-align: center;
-  margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .btn-con {
-  margin-bottom: 50px;
-  font-size: 1.1rem;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
 }
 
 .btn-contact {
-  background: none;
-  border: 1px solid #000;
-  padding: 12px 40px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-  color: #000;
+    background: none;
+    border: 1px solid #000;
+    padding: 12px 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000;
 }
 
 .btn-contact:hover {
-  background: #000;
-  color: #fff;
+    background: #000;
+    color: #fff;
 }
 
 .message-frame {
-  max-width: 600px;
-  margin: 0 auto 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .input-field {
-  padding: 15px 18px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  font-size: 1rem;
-  background: #fff;
-  transition: 0.25s ease;
+    padding: 15px 18px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #fff;
+    transition: 0.25s ease;
 }
 .input-field:focus {
-  border-color: #000;
-  outline: none;
+    border-color: #000;
+    outline: none;
 }
 
 /* ===== Footer ===== */
 footer {
-  background-color: #111;
-  text-align: center;
-  padding: 20px 0;
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
 }
 
 footer p {
-  color: #f5f5f5;
-  font-size: 0.9rem;
+    color: #f5f5f5;
+    font-size: 0.9rem;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .profile-details {
-    justify-content: center;
-  }
+    .profile-details {
+        justify-content: center;
+    }
 
-  .section {
-    padding: 40px;
-  }
+    .section {
+        padding: 40px;
+    }
 }
