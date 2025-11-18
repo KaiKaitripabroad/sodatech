@@ -210,7 +210,14 @@ body.dark-mode .profile-table th {
     margin-left: 0;
   }
 }
-/* ふわっと表示用 */
+/* ふわっと表示用
+@keyframes とは？
+
+CSSアニメーションの動きを定義するための設計図。
+
+アニメーションの動きを
+「最初（from）どうする → 最後（to）どうする」
+という形で作る。 */
 @keyframes fadeIn {
   from {
     opacity: 0;
