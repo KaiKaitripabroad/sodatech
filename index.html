@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontの読み込み -->
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
       rel="stylesheet"
     />
+    <!-- cssの読み込み -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- タイトル -->
     <title>Introduce</title>
   </head>
 
   <body>
-    <!-- ヘッダーを実装 -->
+    <!-- ナビゲーション（ヘッダー） -->
     <header>
       <a href="#" class="logo">Introduce</a>
 
@@ -27,27 +30,36 @@
         <a href="#from">From</a>
         <a href="#spots">Cebu Life</a>
         <a href="#contact">Contact</a>
-        <button id="mode-toggle" class="mode-btn">🌙</button>
+        <button id="mode-toggle" class="mode-btn">🌙</button
+        ><!-- ダークモード切り替えボタン（🌙アイコン） -->
       </nav>
     </header>
     <main>
+      <!-- ============================= -->
+      <!--    メインビジュアルのスライドショー     -->
+      <!-- ============================= -->
       <div class="carousel">
+        <!-- スライド画像をまとめる要素 -->
         <div class="slides">
+          <!-- 最初の画像は class="active" が付いていて表示される -->
           <img src="./assets/img/beach.jpg" alt="beach" class="active" />
           <img src="./assets/img/main-visual.png" alt="island" />
           <img src="./assets/img/shopping.jpg" alt="shop" />
         </div>
-        <!-- ボタン -->
+        <!-- スライドショー左右のボタン -->
         <button class="prev">❮</button>
         <button class="next">❯</button>
       </div>
-      <!-- Profile Section -->
+      <!-- ============================= -->
+      <!--            Profile            -->
+      <!-- ============================= -->
       <section id="profile" class="profile-wrap section">
         <h2 class="section-title">Profile</h2>
 
-        <!-- 画像をhoverで写真の変更をする -->
+        <!-- 左右でプロフィール画像と情報を並べるためのコンテナ -->
         <div class="profile-container">
           <div class="profile-left">
+            <!-- プロフィール画像（hoverで切り替えられる仕様にしている） -->
             <img
               id="profile-img"
               class="profile-img"
@@ -55,13 +67,18 @@
               alt="Ayaのプロフィール写真"
             />
           </div>
+          <!-- 右側：名前とプロフィール表 -->
           <div class="profile-right">
             <h3>Aya Sasaki</h3>
+
             <div class="profile-details">
+              <!-- プロフィールの項目を整理して表示する表 -->
               <table class="profile-table">
                 <tr>
                   <th>Age</th>
+                  <!-- 項目名 -->
                   <td>22</td>
+                  <!-- 内容 -->
                 </tr>
                 <tr>
                   <th>Job</th>
@@ -79,6 +96,8 @@
             </div>
           </div>
         </div>
+
+        <!-- 自己紹介文 -->
         <div class="intro-text">
           <p>
             こんにちは！Ayaです。<br />
@@ -88,12 +107,16 @@
         </div>
       </section>
 
-      <!-- From Section -->
+      <!-- ============================= -->
+      <!--          From（出身地）        -->
+      <!-- ============================= -->
       <section id="from" class="map-section section">
         <h2 class="section-title">From</h2>
         <p>
           私の出身地は北海道です。自然豊かで、四季を通して美しい風景が楽しめます。
         </p>
+
+        <!-- Googleマップ埋め込み -->
         <div class="map-wrap">
           <iframe
             title="北海道の地図"
@@ -107,13 +130,15 @@
         </div>
       </section>
 
-      <!-- Cebu Life Section -->
+      <!-- ============================= -->
+      <!--       Cebu Life（おすすめ紹介）  -->
+      <!-- ============================= -->
       <section id="spots" class="cards-wrap section">
         <h2 class="section-title">Cebu Life</h2>
         <div class="cards">
-          <!-- cards -->
+          <!-- カードを横並びにするコンテナ -->
           <div class="card">
-            <!-- card -->
+            <!-- 1つ目のカード -->
             <img
               src="./assets/img/shopping.jpg"
               alt="アヤラショッピングモールの外観"
@@ -126,6 +151,7 @@
               </p>
             </div>
           </div>
+          <!-- 2つ目のカード -->
           <div class="card">
             <img
               src="./assets/img/oslob.png"
@@ -139,6 +165,7 @@
               </p>
             </div>
           </div>
+          <!-- 3つ目のカード -->
           <div class="card">
             <img
               src="./assets/img/night_market.png"
@@ -155,10 +182,15 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- ============================= -->
+      <!--            Contact            -->
+      <!-- ============================= -->
       <section id="contact" class="contact section">
         <h2 class="section-title">Contact</h2>
+
         <p class="btn-con">セブに関するご質問はここからお願いします！</p>
+
+        <!-- 入力フォーム -->
         <form class="message-frame">
           <input
             type="text"
@@ -173,15 +205,20 @@
             required
           ></textarea>
         </form>
+
+        <!-- 送信ボタン -->
         <button class="btn-contact">Send Message</button>
       </section>
     </main>
 
-    <!-- フッター -->
+    <!-- ============================= -->
+    <!--           フッター             -->
+    <!-- ============================= -->
     <footer>
       <p>&copy; Introduce</p>
     </footer>
 
+    <!-- JavaScriptファイルの読み込み（スライドショーやボタンの動作） -->
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

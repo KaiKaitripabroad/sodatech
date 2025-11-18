@@ -1,13 +1,6 @@
+// ダークmode切り替え
 const modeBtn = document.getElementById("mode-toggle");
 const body = document.body;
-const slides = document.querySelectorAll(".slides img");
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-const profileImg = document.getElementById("profile-img");
-const originalSrc = "./assets/img/profile-image.png"; // 元の画像パス
-const hoverSrc = "./assets/img/profile-image2.png"; // ホバー時の画像パス
-const menuIcon = document.getElementById("menu-icon");
-const nav = document.getElementById("nav");
 
 modeBtn.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
@@ -20,11 +13,19 @@ modeBtn.addEventListener("click", () => {
   }
 });
 
+// ハンバーガーメニュー
+const menuIcon = document.getElementById("menu-icon");
+const nav = document.getElementById("nav");
+
 menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("active"); // アニメーション切り替え
   nav.classList.toggle("active"); // メニュー開閉
 });
 
+// プロフィール画像ホバーしたときの画像チェンジ
+const profileImg = document.getElementById("profile-img");
+const originalSrc = "./assets/img/profile-image.png"; // 元の画像パス
+const hoverSrc = "./assets/img/profile-image2.png"; // ホバー時の画像パス
 // マウスが乗ったとき
 profileImg.addEventListener("mouseenter", () => {
   profileImg.src = hoverSrc;
@@ -35,6 +36,11 @@ profileImg.addEventListener("mouseleave", () => {
   profileImg.src = originalSrc;
 });
 
+//画像のスライドショー
+const slides = document.querySelectorAll(".slides img");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+//初期設定の変数
 let current = 0;
 let slideInterval;
 // スライド切り替え
@@ -81,3 +87,7 @@ prev.addEventListener("click", () => {
 // 最初のスライドと自動再生開始
 showSlide(current);
 startAutoPlay();
+showSlide(current);
+// ページを読み込んだ直後に、current（初期は0）を表示するために呼んでいます。これによりページ読み込み後すぐに最初のスライドが active になって見える状態になります。
+// startAutoPlay();
+// ページ読み込み後すぐに自動でスライドが切り替わるようにするために呼んでいます（最初の切り替えは4秒後）。

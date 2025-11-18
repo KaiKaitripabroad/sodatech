@@ -27,6 +27,64 @@ header {
   z-index: 100;
 }
 
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #222;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav a,
+.mode-btn {
+  margin-left: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #222;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.menu-icon {
+  display: none;
+  width: 30px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
 /* ===== ダークモード切替ボタン ===== */
 .mode-btn {
   background: none;
@@ -97,64 +155,6 @@ body.dark-mode .profile-table th {
   color: #f5f5f5;
 }
 
-.logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #222;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.nav a,
-.mode-btn {
-  margin-left: 30px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #222;
-  position: relative;
-  font-size: 1.1rem;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: #000;
-  transition: width 0.3s;
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-
-.menu-icon {
-  display: none;
-  width: 30px;
-  height: 25px;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.menu-icon span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
 /* ====== スマホサイズ時 ====== */
 @media screen and (max-width: 830px) {
   .menu-icon {
@@ -210,7 +210,6 @@ body.dark-mode .profile-table th {
     margin-left: 0;
   }
 }
-
 /* ふわっと表示用 */
 @keyframes fadeIn {
   from {
@@ -345,6 +344,11 @@ body.dark-mode .profile-table th {
   border-collapse: collapse;
   font-size: 1rem;
 }
+/* 表（table）のセルの外枠（ボーダー）を「くっつける」設定。
+
+デフォルトでは、セルの枠線が「二重線」みたいに見えることがある。
+
+collapse を指定すると、1本の線として表示されるのでスッキリする。 */
 
 .profile-table th,
 .profile-table td {
