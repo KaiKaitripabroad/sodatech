@@ -479,6 +479,7 @@ body.dark-mode .profile-table th {
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
+  color: #000;
 }
 
 .btn-contact:hover {
