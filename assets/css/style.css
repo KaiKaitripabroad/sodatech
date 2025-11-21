@@ -101,8 +101,67 @@ header {
 }
 
 /* ===== ダークモード全体設定 ===== */
+/*cssネスティング*/
+body.dark-mode {
+  .menu-icon span {
+    background-color: #f5f5f5;
+  }
 
-body.dark-mode .menu-icon span {
+  background-color: #121212;
+  color: #f5f5f5;
+
+  header {
+    background-color: #1e1e1e;
+  }
+
+  a {
+    color: #f5f5f5;
+  }
+
+  p {
+    color: #e0e0e0;
+  }
+
+  .card-bottom {
+    > h3 {
+      color: #121212;
+    }
+
+    > p {
+      color: #333333;
+    }
+  }
+
+  footer {
+    background-color: #f5f5f5;
+
+    p {
+      color: #121212;
+    }
+  }
+
+  .section-title::after {
+    background: #f5f5f5;
+  }
+
+  .btn-contact {
+    border: 1px solid #f5f5f5;
+    color: #f5f5f5;
+
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  .profile-table {
+    th {
+      color: #f5f5f5;
+    }
+  }
+}
+
+/* body.dark-mode .menu-icon span {
   background-color: #f5f5f5;
 }
 
@@ -154,63 +213,8 @@ body.dark-mode .btn-contact:hover {
 
 body.dark-mode .profile-table th {
   color: #f5f5f5;
-}
+} */
 
-/* ====== スマホサイズ時 ====== */
-@media screen and (max-width: 830px) {
-  .menu-icon {
-    display: flex;
-  }
-
-  .nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: #ffffffd8;
-    flex-direction: column;
-    text-align: center;
-    padding: 25px;
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-
-  .nav.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .nav a {
-    display: block;
-    margin: 15px;
-    font-size: 1rem;
-  }
-
-  /* ダークモード中のナビ文字 */
-  body.dark-mode .nav a {
-    color: #121212;
-  }
-
-  /* ====== ＝ → × のアニメーション ====== */
-  .menu-icon.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(16px);
-  }
-
-  .menu-icon.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-icon.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-16px);
-  }
-
-  .mode-btn {
-    margin-left: 0;
-  }
-}
 /* ふわっと表示用
 @keyframes とは？
 
@@ -233,20 +237,25 @@ CSSアニメーションの動きを定義するための設計図。
 .carousel {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 75vh;
   margin: auto;
   overflow: hidden;
 }
 
 .slides {
-  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
   transition: transform 0.6s ease; /* スライドの滑らかさ */
 }
 
 .slides img {
-  object-fit: cover;
+  position: absolute;
   width: 100%;
-  height: 500px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
   flex-shrink: 0;
   display: none; /* 最初は非表示 */
 }
@@ -384,21 +393,6 @@ collapse を指定すると、1本の線として表示されるのでスッキ�
   text-align: center;
 }
 
-/* スマホ */
-@media screen and (max-width: 768px) {
-  .profile-right h3 {
-    text-align: center;
-  }
-
-  .profile-table {
-    margin: 0 auto; /* スマホ時に中央寄せ */
-  }
-
-  .slides img {
-    height: 100%;
-  }
-}
-
 .intro-text {
   margin: 50px auto 0;
   font-size: 1rem;
@@ -424,24 +418,6 @@ collapse を指定すると、1本の線として表示されるのでスッキ�
   border: 0;
   border-radius: 10px;
 }
-
-@media screen and (max-width: 768px) {
-  .carousel {
-    height: auto;
-  }
-
-  .slides img {
-    object-fit: contain;
-  }
-  .map-wrap iframe {
-    aspect-ratio: auto;
-    height: 300px;
-  }
-  .profile-right h3 {
-    text-align: center;
-  }
-}
-
 /* ===== Cebu Recommendations ===== */
 .cards {
   display: grid;
@@ -524,7 +500,7 @@ collapse を指定すると、1本の線として表示されるのでスッキ�
 footer {
   background-color: #111;
   text-align: center;
-  padding: 20px 0;
+  padding: 60px 0;
 }
 
 footer p {
@@ -532,8 +508,75 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* スマホ */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #ffffffd8;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .nav.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav a {
+    display: block;
+    margin: 15px;
+    font-size: 1rem;
+  }
+
+  /* ダークモード中のナビ文字 */
+  body.dark-mode .nav a {
+    color: #121212;
+  }
+
+  /* ====== ＝ → × のアニメーション ====== */
+  .menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(16px);
+  }
+
+  .menu-icon.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-16px);
+  }
+
+  .mode-btn {
+    margin-left: 0;
+  }
+
+  .map-wrap iframe {
+    aspect-ratio: auto;
+    height: 300px;
+  }
+
+  /* ★ 重複していた profile-right h3 を1つに統合 */
+  .profile-right h3 {
+    text-align: center;
+  }
+
+  .profile-table {
+    margin: 0 auto; /* スマホ時に中央寄せ */
+  }
+
   .profile-details {
     justify-content: center;
   }

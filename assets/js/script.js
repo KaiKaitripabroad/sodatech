@@ -21,6 +21,18 @@ menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("active"); // アニメーション切り替え
   nav.classList.toggle("active"); // メニュー開閉
 });
+// ===== メニュー以外をクリックしたら閉じる =====
+document.addEventListener("click", (e) => {
+  const isMenuClick = menuIcon.contains(e.target);
+  const isNavClick = nav.contains(e.target);
+
+  // メニューアイコン or ナビ内をクリックした場合は何もしない
+  if (isMenuClick || isNavClick) return;
+
+  // それ以外の場所をクリック → メニュー閉じる
+  menuIcon.classList.remove("active");
+  nav.classList.remove("active");
+});
 
 // プロフィール画像ホバーしたときの画像チェンジ
 const profileImg = document.getElementById("profile-img");
@@ -87,7 +99,6 @@ prev.addEventListener("click", () => {
 // 最初のスライドと自動再生開始
 showSlide(current);
 startAutoPlay();
-showSlide(current);
 // ページを読み込んだ直後に、current（初期は0）を表示するために呼んでいます。これによりページ読み込み後すぐに最初のスライドが active になって見える状態になります。
 // startAutoPlay();
 // ページ読み込み後すぐに自動でスライドが切り替わるようにするために呼んでいます（最初の切り替えは4秒後）。
